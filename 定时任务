@@ -1,0 +1,10 @@
+0 0 * * * root python3 /home/web/qiuyi/SMASAC/.spyproject/weibo_com.py "中国地震台网正式测定"
+0 0 * * * root python3 /home/web/qiuyi/SMASAC/.spyproject/weibo_com.py "强降雨"
+0 0 * * * root python3 /home/web/qiuyi/SMASAC/.spyproject/weibo_com.py "台风"
+0 0 * * * root python3 /home/web/qiuyi/SMASAC/.spyproject/NPC_weibo_com.py "新冠肺炎"
+0 12 * * * root cd /home/web/qiuyi/SMASAC/.spyproject/text_classifier_rainstorm/predictors && python3 test.py --config_path="/home/web/qiuyi/SMASAC/.spyproject/text_classifier_rainstorm/config/textcnn_config.json"
+10 12 * * * root cd /home/web/qiuyi/SMASAC/.spyproject/text_classifier_typhoon/predictors && python3 test.py --config_path="/home/web/qiuyi/SMASAC/.spyproject/text_classifier_typhoon/config/textcnn_config.json"
+20 12 * * * root cd /home/web/qiuyi/SMASAC/.spyproject/text_classifier_earthquake/predictors && python3 test.py --config_path="/home/web/qiuyi/SMASAC/.spyproject/text_classifier_earthquake/config/bilstm_config.json"
+0 13 * * * root python3 /home/web/qiuyi/SMASAC/.spyproject/NER/main.py --disaster_type=1
+10 13 * * * root python3 /home/web/qiuyi/SMASAC/.spyproject/NER/main.py --disaster_type=2
+20 13 * * * root python3 /home/web/qiuyi/SMASAC/.spyproject/NER/main.py --disaster_type=3
